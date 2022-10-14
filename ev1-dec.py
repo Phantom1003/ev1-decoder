@@ -6,6 +6,11 @@ import windnd
 def dnd_file(files):
     for file in files:
         file = file.decode()
+        
+        if (file.split(".")[-1] != "ev1"):
+            print("Ignore " + file)
+            continue
+
         print("Convert " + file)
         with open(file, 'rb+') as f:
             raw = f.read(100)
